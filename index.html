@@ -1,0 +1,52 @@
+<?php
+	session_start();
+	include $_SERVER['DOCUMENT_ROOT'].'/php/functions.php';
+?>
+    <!DOCTYPE HTML>
+    <html lang="RU-ru">
+
+    <head>
+        <?php
+		    insertHead();
+		?>
+    </head>
+
+    <body>
+        <!--header-->
+        <?php 
+            insertHeader() 
+        ?>
+        <!--/header-->
+
+        <!--контент-->
+        <div class="content">
+            <div class="content_center">
+                <div style="margin: 0 auto; text-align: center;">
+                    <?php
+						if (empty($_SESSION['login']) or empty($_SESSION['id']))
+						{echo "Вы вошли, как гость";}
+						else
+						{echo "Вы вошли, как ".$_SESSION['login'];}
+					?>
+                        <h1>Добро пожаловать на сайт Cofeemaker!</h1>
+                        <img class="center" style="width: 50%; height: 50%;" src="img/smile.png" alt="">
+                </div>
+            </div>
+
+            <!--новости-->
+            <?php 
+                insertNews() 
+            ?>
+            <!--/новости-->
+        </div>
+        <!--/контент-->
+
+        <!--footer-->
+        <?php 
+            insertFooter() 
+        ?>
+        <!--/footer-->
+
+    </body>
+
+    </html>

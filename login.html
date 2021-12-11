@@ -1,0 +1,52 @@
+<?php
+	session_start();
+	if (!empty($_SESSION['login']) and !empty($_SESSION['id']))
+	{
+		header('HTTP/1.1 200 OK');
+		header('Location: http://'.$_SERVER['HTTP_HOST'].'/index.html');
+		exit();
+	}
+	include $_SERVER['DOCUMENT_ROOT'].'/php/functions.php';
+?>
+    <!DOCTYPE HTML>
+    <html lang="RU-ru">
+
+    <head>
+        <?php
+		    insertHead();
+		?>
+    </head>
+
+    <body>
+        <?php 
+            insertHeader() 
+        ?>
+
+        <div class="content">
+            <div class="content_center">
+                <div class="center log_in_form">
+                    <div class="form_title">Авторизация</div>
+                    <div class="form_item">
+                        <label class="form_label" for="login">Логин:</label>
+                        <input class="form_input" name="login" autofocus type="text" id="login" />
+                    </div>
+                    <div class="form_item">
+                        <label class="form_label" for="password">Пароль:</label>
+                        <input class="form_input" name="password" type="password" id="password" />
+                    </div>
+                    <div class="form_item">
+                        <button class="form_button" onclick="login()">Войти</button>
+                    </div>
+                    <div class="form_item">
+                        <button class="form_button" onclick="reg()">Зарегистрироваться</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php 
+            insertFooter()
+        ?>
+    </body>
+
+    </html>

@@ -1,0 +1,70 @@
+<?php
+	session_start();
+	include $_SERVER['DOCUMENT_ROOT'].'/php/functions.php';
+?>
+    <!DOCTYPE HTML>
+    <html lang="RU-ru">
+
+    <head>
+        <?php
+		    insertHead();
+	    ?>
+    </head>
+
+    <body>
+        <!--header-->
+        <?php 
+            insertHeader() 
+        ?>
+        <!--/header-->
+
+        <!--контент-->
+        <div class="content">
+            <div class="content_center">
+                <div class="intro">
+                    <p>Все, кто ищет вкусные и красивые салаты, найдут их здесь </p>
+                    <p>Внимание акция <span style="color: crimson;">Всё по 100!</span> </p>
+                </div>
+                <div class="grid">
+
+                    <a class="item" id="sr1" href="">
+                        <div class="title">Салат с сухариками королевский </div>
+                        <img class="img" src="img/1.jpg" title="Фото к рецепту: Салат с сухариками &quot;Королевский&quot;" alt="Фото к рецепту: Салат с сухариками &quot;Королевский&quot;">
+                        <div class="ingridients">Состав: яйца, крабовые палочки, сыр твёрдый, сухарики, чеснок, лимон, майонез</div>
+                        <div class="price">100 RUB</div>
+                    </a>
+
+                    <a class="item" id="sr2" href="">
+                        <div class="title">Салат "Ёжик"</div>
+                        <img class="img" src="img/2.jpg" title="Фото к рецепту: Салат &quot;Ёжик&quot;" alt="Фото к рецепту: Салат &quot;Ёжик&quot;">
+                        <div class="ingridients">Состав: &nbsp;колбаса копченая, сыр твёрдый, яйца отварные, кукуруза, чеснок, майонез</div>
+                        <div class="price">100 RUB</div>
+                    </a>
+
+
+                    <a class="item " id="sr3" href="">
+                        <div class="title">Салат "Мужские слезы"</div>
+                        <img class="img" src="img/3.jpg" title="Фото к рецепту: Салат &quot;Мужские слезы&quot;" alt="Фото к рецепту: Салат &quot;Мужские слезы&quot;">
+                        <div class="ingridients">Состав: &nbsp;куриная грудка, морковка корейская, шампиньоны консервированные, майонез, сыр, яйца отварные, лук репчатый, уксус столовый</div>
+                        <div class="price">100 RUB</div>
+                    </a>
+
+                </div>
+            </div>
+
+            <!--новости-->
+            <?php 
+                insertNews() 
+            ?>
+            <!--/новости-->
+        </div>
+        <!--/контент-->
+
+        <!--footer-->
+        <?php 
+            insertFooter() 
+        ?>
+        <!--/footer-->
+    </body>
+
+    </html>
